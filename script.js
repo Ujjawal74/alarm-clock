@@ -97,7 +97,7 @@ function deleteAlarm(id) {
   renderAlarms(alarmsList);
 }
 
-// rendering all alrams in DOM
+// rendering all alarms in DOM
 function renderAlarms(alarmsList) {
   alarms.innerHTML = "";
 
