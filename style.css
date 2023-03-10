@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  padding: 10px;
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wrapper {
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 80vh;
+  min-width: 40vw;
+  border: 1px solid #000;
+}
+.cover {
+  display: flex;
+  justify-content: center;
+}
+.cover img {
+  height: auto;
+  width: 200px;
+  object-fit: cover;
+  animation-name: none;
+  animation-duration: 2s;
+  cursor: pointer;
+}
+.cover img:hover {
+  animation-name: flippy;
+}
+
+/* Animation of clock image */
+@keyframes flippy {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.current-time {
+  align-self: center;
+}
+.select-time {
+  display: flex;
+  justify-content: center;
+}
+.select-time input {
+  margin: 0 5px;
+  padding: 10px;
+  outline: none;
+  width: 80px;
+}
+.select-time button,
+#stopAlarm {
+  margin-left: 5px;
+  background: hotpink;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  transition: all 0.4s ease;
+}
+.select-time button:hover,
+#stopAlarm:hover {
+  background: linear-gradient(45deg, hotpink, white);
+}
+
+.upcoming-alarms {
+  display: flex;
+  flex-direction: column;
+}
+.upcoming-alarms .title {
+  align-self: center;
+}
+
+.upcoming-alarms #alarms .alarm {
+  padding: 10px;
+  width: 100%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.upcoming-alarms #alarms .alarm .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 60px;
+  background: teal;
+  color: #fff;
+}
+
+.upcoming-alarms #alarms .alarm .action {
+  color: red;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upcoming-alarms #alarms .alarm .action:hover {
+  color: crimson;
+  transform: scale(1.2);
+}
+
+/* pop up styles */
+#notifier {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  color: #fff;
+  border-radius: 10px;
+  z-index: 1;
+  display: none;
+}

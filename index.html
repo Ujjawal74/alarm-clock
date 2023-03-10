@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <!-- my css -->
+    <link rel="stylesheet" href="./style.css" />
+    <title>Alarm Clock</title>
+  </head>
+  <body>
+    <!-- main container -->
+    <div class="container">
+      <!-- wrapper -->
+      <div class="wrapper">
+        <!-- clock image -->
+        <div class="cover">
+          <img src="./assests/alarm.png" alt="" />
+        </div>
+
+        <!-- current time -->
+        <div class="current-time">
+          <h1 id="now">00:00:00</h1>
+        </div>
+
+        <br /><br />
+        <!-- user select date & time -->
+        <div class="select-time">
+          <input id="hours" type="number" placeholder="18" min="0" max="23" />
+          <input id="minutes" type="number" placeholder="45" min="0" max="59" />
+          <button id="setAlarm">Set Alarm</button>
+        </div>
+
+        <br /><br />
+        <!-- Upcoming alarms list -->
+        <div class="upcoming-alarms">
+          <div class="title">Upcoming Alarms</div>
+          <br />
+          <div id="alarms">
+            <!-- Alarm Item -->
+            <div class="alarm">
+              <div class="time"><h4>04:30</h4></div>
+              <div class="action">
+                <i class="fa fa-trash" data-id="0alarm"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pop up when alarm found! -->
+      <div id="notifier">
+        <div class="msg">Times Up! It's <span id="alarmTime">19:00</span></div>
+        <br />
+        <button id="stopAlarm" onclick="stopAlarm()">Stop Alarm</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
